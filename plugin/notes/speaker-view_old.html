@@ -11,7 +11,6 @@
 			body {
 				font-family: Helvetica;
 				font-size: 18px;
-				background-color: black;
 			}
 
 			#current-slide,
@@ -274,14 +273,7 @@
 			body[data-speaker-layout="notes-only"] #upcoming-slide {
 				display: none;
 			}
-			body[data-speaker-layout="notes-only"] .bigbutton {
-				position: fixed;
-    			inset: 0;
-    			width: fit-content;
-    			height: fit-content;
-    			margin: auto;
-    			margin-top: 20%;
-			}
+
 			body[data-speaker-layout="notes-only"] #speaker-controls {
 				padding-top: 40px;
 				top: 0;
@@ -323,9 +315,24 @@
 		<div id="current-slide"></div>
 		<div id="upcoming-slide"><span class="overlay-element label">Upcoming</span></div>
 		<div id="speaker-controls">
-			<div class="speaker-controls-notes">
-				<h4 class="label"></h4>
-				<button class="bigbutton">Start</button>
+			<div class="speaker-controls-time" hidden>
+				<h4 class="label">Time <span class="reset-button">Click to Reset</span></h4>
+				<div class="clock">
+					<span class="clock-value">0:00 AM</span>
+				</div>
+				<div class="timer">
+					<span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+				</div>
+				<div class="clear"></div>
+
+				<h4 class="label pacing-title" style="display: none">Pacing – Time to finish current slide</h4>
+				<div class="pacing" style="display: none">
+					<span class="hours-value">00</span><span class="minutes-value">:00</span><span class="seconds-value">:00</span>
+				</div>
+			</div>
+
+			<div class="speaker-controls-notes hidden">
+				<h4 class="label">Notes</h4>
 				<div class="value"></div>
 			</div>
 		</div>
